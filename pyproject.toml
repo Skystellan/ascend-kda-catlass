@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ascend-kda-catlass"
+version = "0.1.0"
+description = "Source-JIT Native-TND AscendC + CATLASS KDA (Kimi Delta Attention) forward & backward kernels for Ascend 910C (Atlas A2)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["ascend_kda*"]
+
+[tool.setuptools.package-data]
+ascend_kda = []
